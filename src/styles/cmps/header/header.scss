@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 120px 30px 120px;
+
+    .logo {
+        font-size: 30px;
+        color: $clr3;
+    }
+
+
+    .cart-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        h3 {
+            font-size: 25px;
+            color: $clr3;
+            margin-left: 5px;
+        }
+    }
+
+    .cart-image-continer {
+        height: 20px;
+    }
+}
