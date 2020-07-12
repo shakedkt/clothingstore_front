@@ -4,10 +4,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 120px 30px 120px;
+    position: sticky;
+    background-color: white;
+    top: 0px;
 
     .logo {
-        font-size: 30px;
+        font-size: 33px;
         color: $clr3;
+        font-family: 'Bebas Neue', cursive;
     }
 
 
@@ -18,9 +22,14 @@
         align-items: center;
 
         h3 {
-            font-size: 25px;
-            color: $clr3;
-            margin-left: 5px;
+            font-size: 22px;
+            margin-left: 4px;
+            margin-top: 3px;
+        }
+
+        .svg-cart{
+            height: 30px;
+            width: 30px;
         }
     }
 

@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BagList from '../cmps/cart/bag-list';
 import SHOP from '../images/emptybag.jpg';
-import { loadCart } from '../actions/cartActions';
+import { loadWishlist } from '../actions/wishlistActions';
 
-class CartPage extends Component {
-    // constructor(props, context) {
-    //     super(props, context);
-    // }
-
+class WishListPage extends Component {
+   
     async componentWillMount() {
-        await this.loadCartFromStorage()
+        await this.loadWishlistFromStorage()
     }
 
-    loadCartFromStorage() {
-        this.props.loadCart()
+    loadWishlistFromStorage() {
+        this.props.loadWishlist()
     }
 
     componentDidUpdate(prevProps) {   
@@ -52,12 +49,12 @@ class CartPage extends Component {
 
 const mapStataeToProps = (state) => {
     return {
-        cart: state.cart.cart
+        wishlist: state.wishlist.list
     }
 }
 
 const mapDispatchToProps = {
-    loadCart
+    loadWishlist
 }
 
-export default connect(mapStataeToProps, mapDispatchToProps)(CartPage)
+export default connect(mapStataeToProps, mapDispatchToProps)(WishListPage)

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 async function getProducts(filter) {
-
     const res = await axios.get('http://localhost:3000/api/product/', {
         params: {
             filter: filter

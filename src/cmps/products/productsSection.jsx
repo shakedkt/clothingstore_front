@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import ProductList from './ProductList';
-
-import { loadProducts } from '../actions/productActions';
-
+import { loadProducts } from '../../actions/productActions';
 
 class productsSection extends Component {
-
-    constructor(props) {
-        super(props)
-        console.log('this.props constructor', this.props);
-    }
 
    async componentDidUpdate(prevProps) {
         if (prevProps.section !== this.props.section) {
@@ -28,12 +20,8 @@ class productsSection extends Component {
     }
 
     render() {
-
         return (
             <div>
-
-                {/* // h1 => section.name  */}
-
                 <div className="products">
                     <ProductList products={this.props.products}></ProductList>
                 </div>

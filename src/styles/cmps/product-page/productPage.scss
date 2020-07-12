@@ -1,0 +1,58 @@
+.product-page {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 25vw;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .add-to-bag {
+        color: rgb(240, 238, 238);
+        background-color: $clr4;
+        font-size: 16px;
+        font-family: 'vegur-bold';
+        padding: 20px 0px 20px 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .svg-cart {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+    }
+
+    .add-to-bag:hover {
+        opacity: 70%;
+    }
+
+}
+
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.product-price {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+
+    span {
+        font-size: 15px;
+        color: #757575;
+        font-weight: normal;
+    }
+
+
+
+}

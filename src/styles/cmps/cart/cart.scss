@@ -1,0 +1,116 @@
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 120px 30px 120px;
+    font-size: 18px;
+
+    .header {
+        font-size: 25px;
+    }
+
+    .bag {
+        border: 1px solid #a2a2a2c7;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'vegur-regular';
+    }
+
+    .bag-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+
+        
+
+        .shipping-fee {
+            font-family: 'vegur-bold';
+            color: #c4aa84;
+        }
+
+        .shipping-from{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+           
+        }
+        img {
+            width: 15px;
+            height: 16px;
+            margin-right: 5px;
+        }
+    }
+
+    .country-name {
+        font-family: 'vegur-bold';
+    }
+
+    .bag-body {
+        border-top: 1px solid #a2a2a2c7;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px;
+
+        *:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        img {
+            width: 150px
+        }
+
+        h3 {
+            font-family: 'vegur-bold';
+            padding-bottom: 15px;
+        }
+
+        .delete-product {
+            width: 16px;
+            align-self: flex-start;
+            cursor: pointer;
+        }
+
+        .quant-and-size {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .size {
+                margin-bottom: 45px;
+            }
+
+            h3{
+                padding-bottom: 5px;
+            }
+        }
+
+        
+    }
+
+    
+}
+
+
+
+.empty-bag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .shop-img {
+        width: 400px;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
