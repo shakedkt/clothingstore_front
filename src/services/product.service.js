@@ -10,7 +10,7 @@ async function getProducts(filter) {
             host: 'http://localhost:3000'
         }
 
-    })
+    })    
     return res.data.products
 }
 

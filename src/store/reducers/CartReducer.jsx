@@ -1,18 +1,19 @@
 const initalState = {
-    cart: []
+    products: [],
+    tagName: 'BagProduct'
 }
 
 export default function CartReducer(state = initalState, action) {
     switch (action.type) {
         case 'SET_CART':
-            return { ...state, cart: action.cart }
+            return { ...state, products: action.products }
 
         case 'UPDATE_CART':
-            return { ...state, cart: [...state.cart, action.product] }
+            return { ...state, products: [...state.products, action.updatedProducts] }
 
         case 'REMOVE_CART':
             return {
-                state, cart: state.cart.filter(product => {
+                state, products: state.products.filter(product => {
                     return product.id !== action.productId
                 })
             }

@@ -1,16 +1,22 @@
 .product-page {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     img {
-        width: 25vw;
+        width: 35vw;
     }
 
     h2 {
         font-size: 30px;
     }
 
-    .add-to-bag {
+    .wishlist {
+        background-color: white;
+        color: $clr4;
+    }
+
+    .add-to {
         color: rgb(240, 238, 238);
         background-color: $clr4;
         font-size: 16px;
@@ -20,26 +26,57 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        border-radius: 6px;
 
-        .svg-cart {
+        .svg-icon {
             width: 20px;
             height: 20px;
             margin-left: 5px;
         }
 
+        .star {
+            width: 18px;
+            height: 18px;
+        }
+
     }
 
-    .add-to-bag:hover {
+    .wishlist {
+        background-color: white;
+        color: $clr4;
+        border: 1px solid $clr4;
+        align-items: flex-end;
+    }
+
+    .add-to:hover {
         opacity: 70%;
     }
 
-}
+    .product-desc {
+        font-size: 20px;
+        font-family: 'vegur-regular';
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f8f8f8;
 
+        h4 {
+            font-family: 'vegur-bold';
+            margin: 15px 0px;
+        }
+
+        p{
+            margin: 15px 0px;
+        }
+
+    }
+}
 
 .product-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .product-price {
@@ -53,6 +90,37 @@
         font-weight: normal;
     }
 
+}
 
+.buttons {
+    display: grid;
+    margin-top: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+}
 
+.requierd {
+    color: red;
+}
+
+.delivery-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+
+    h4 {
+        font-family: 'vegur-bold';
+    }
+
+    .select-cmp{
+        max-height: 10px;
+    }
+}
+
+.reactive-section{
+    margin-bottom: 40px;
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BagList from '../cmps/cart/bag-list';
-import SHOP from '../images/emptybag.jpg';
 import { loadWishlist } from '../actions/wishlistActions';
+import List from '../cmps/list';
+import SvgEmptyWishlist from '../images/emptyWishlist';
 
-class WishListPage extends Component {
-   
+class WishlistPage extends Component {
+
     async componentWillMount() {
         await this.loadWishlistFromStorage()
     }
@@ -14,32 +14,36 @@ class WishListPage extends Component {
         this.props.loadWishlist()
     }
 
-    componentDidUpdate(prevProps) {   
-        if (prevProps.cart.length !== this.props.cart.length) {
-            this.loadCartFromStorage()
+    componentDidUpdate(prevProps) {
+        if (prevProps.wishlist.length !== this.props.wishlist.length) {
+            this.loadWishlistFromStorage()
         }
     }
 
     render() {
-        if (this.props.cart.length === 0) {
+        
+        if (this.props.wishlist.length === 0) {
+
             return (
                 <section className="empty-bag">
                     <div className="header">
-                        <h2>Shopping bag Empty</h2>
+                        <h2>Wishlist Empty</h2>
                     </div>
-                    <img className="shop-img" src={SHOP} alt="" />
+                    <SvgEmptyWishlist className="wishlist-svg"></SvgEmptyWishlist>
                 </section>
             )
-        }
+        } 
 
         return (
-            <section className="cart-page">
+            <section className="wishlist-page">
                 <div className="header">
-                    <h2>Shopping bag</h2>
+                    <h2>Wishlist bag</h2>
                 </div>
 
                 <div className="products">
-                    <BagList cart={this.props.cart}></BagList>
+                    {/* <wishlistList wishlist={this.props.wishlist}></wishlistList> */}
+                    <List products={this.props.wishlist} tagName={'WishlistProduct'}> </List>
+
                 </div>
 
             </section>
@@ -49,7 +53,7 @@ class WishListPage extends Component {
 
 const mapStataeToProps = (state) => {
     return {
-        wishlist: state.wishlist.list
+        wishlist: state.wishlist.products
     }
 }
 
@@ -57,4 +61,4 @@ const mapDispatchToProps = {
     loadWishlist
 }
 
-export default connect(mapStataeToProps, mapDispatchToProps)(WishListPage)
+export default connect(mapStataeToProps, mapDispatchToProps)(WishlistPage)

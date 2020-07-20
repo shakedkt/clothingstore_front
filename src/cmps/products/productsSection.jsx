@@ -1,38 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProductList from './ProductList';
+// import ProductList from './ProductList';
 import { loadProducts } from '../../actions/productActions';
+import List from '../list';
 
 class productsSection extends Component {
 
-   async componentDidUpdate(prevProps) {
+    async componentWillMount() {
+        this.loadProducts();
+    }
+
+    loadProducts = () => {
+        this.props.loadProducts(this.props.section)
+    }
+
+    async componentDidUpdate(prevProps) {
         if (prevProps.section !== this.props.section) {
             this.loadProducts();
         }
     }
-
-    async componentDidMount() {
-        this.loadProducts();
-    }
-
-    loadProducts = () => {        
-        this.props.loadProducts(this.props.section)
-    }
-
+    
     render() {
-        return (
-            <div>
-                <div className="products">
-                    <ProductList products={this.props.products}></ProductList>
+            return (
+                <div>
+                    <div className="products">
+                        {/* <ProductList products={this.props.products}></ProductList> */}
+                        <List products={this.props.products} tagName={'ProductPreview'}> </List>
+                    </div>
                 </div>
-            </div>
-        )
-    }
+            )
+    } 
+        
 }
 
 const mapStataeToProps = (state) => {
     return {
-        products: state.product.products,
+        products: state.product.products
     }
 }
 

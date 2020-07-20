@@ -1,0 +1,27 @@
+.main-layout {
+
+    @include for-extra-wide-layout {}
+
+    @include for-wide-layout {
+        // .home {
+        // }
+    }
+
+    @include for-medium-layout {
+        .home {
+            padding: 0px;
+        }
+    }
+
+    @include for-narrow-layout {
+
+        .home {
+            .products-list {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+            }
+        }
+    }
+
+}

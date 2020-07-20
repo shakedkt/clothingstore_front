@@ -3,8 +3,8 @@ import { CartService } from '../services/cart.service'
 
 export function loadCart() {    
     return async dispatch => {
-        const cart = await CartService.loadCart()
-        dispatch({ type: 'SET_CART', cart })
+        const products = await CartService.loadCart()         
+        dispatch({ type: 'SET_CART', products })
     }
 }
 

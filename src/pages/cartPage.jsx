@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BagList from '../cmps/cart/bag-list';
 import SHOP from '../images/emptybag.jpg';
 import { loadCart } from '../actions/cartActions';
+import List from '../cmps/list';
+
 
 class CartPage extends Component {
-    // constructor(props, context) {
-    //     super(props, context);
-    // }
 
-    async componentWillMount() {
-        await this.loadCartFromStorage()
+   async componentDidMount() {
+       await this.loadCartFromStorage()
     }
 
     loadCartFromStorage() {
@@ -18,6 +16,7 @@ class CartPage extends Component {
     }
 
     componentDidUpdate(prevProps) {   
+
         if (prevProps.cart.length !== this.props.cart.length) {
             this.loadCartFromStorage()
         }
@@ -42,7 +41,7 @@ class CartPage extends Component {
                 </div>
 
                 <div className="products">
-                    <BagList cart={this.props.cart}></BagList>
+                    <List products={this.props.cart} tagName={'BagProduct'}> </List>
                 </div>
 
             </section>
@@ -52,7 +51,7 @@ class CartPage extends Component {
 
 const mapStataeToProps = (state) => {
     return {
-        cart: state.cart.cart
+        cart: state.cart.products
     }
 }
 

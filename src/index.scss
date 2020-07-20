@@ -93,14 +93,16 @@ body {
 @import './styles/setup/variabels';
 @import './styles/setup/layout';
 
+// LAYOUTS 
+@import './styles/cmps/header/header.layout.scss';
+@import './styles/pages/home/home.layout.scss';
+@import './styles/cmps/product-preview/productPrev.layout.scss';
+
 // COMPONENTS
 @import './styles/cmps/header/header.scss';
 @import './styles/pages/home/home.scss';
 @import './styles/cmps/product-preview/productPrev.scss';
 @import './styles/cmps/cart/cart.scss';
 @import './styles/cmps/product-page/productPage.scss';
+@import './styles/pages/home/wishList/wishlist.scss';
 
-// LAYOUTS 
-@import './styles/cmps/header/header.layout.scss';
-@import './styles/pages/home/home.layout.scss';
-@import './styles/cmps/product-preview/productPrev.layout.scss';

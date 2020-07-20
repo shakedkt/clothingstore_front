@@ -1,14 +1,26 @@
 @mixin for-narrow-layout {
-    @media (max-width: $break-narrow) {
-      @content;
-    }
+  @media (max-width: $break-narrow) {
+    @content;
   }
+}
 
-  @mixin for-wide-layout {
-    @media (min-width: $break-wide) {
-      @content;
-    }
+@mixin for-medium-layout {
+  @media (max-width: $break-medium) {
+    @content;
   }
+}
+
+@mixin for-wide-layout {
+  @media (max-width: $break-wide) {
+    @content;
+  }
+}
+
+@mixin for-extra-wide-layout {
+  @media (max-width: $break-extra-wide) {
+    @content;
+  }
+}
   
 
 @mixin aspect-ratio($width, $height) {

@@ -21,8 +21,6 @@ export default class homePage extends Component {
     }
 
     sectionName = (section) => {
-        console.log(section);
-
         if (section === '') {
             this.setState({
                 title: 'all products'

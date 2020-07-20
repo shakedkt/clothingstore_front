@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import SvgCart from '../images/shoping-cart';
+import SvgBeg from '../images/bag';
+import SvgWishlistSec from '../images/wishlistThird';
 
 class Header extends Component {
 
     render() {
 
-        var count = ''
-        if (this.props.cart.length > 0) {
+        var count = this.props.cart
+
+        if (count.length > 0) {
             count = this.props.cart.length
         }
 
@@ -18,14 +20,24 @@ class Header extends Component {
                     <NavLink activeClassName="active" exact to="/"> clothes &amp; brands</NavLink>
                 </div>
 
-                <NavLink className="cart-link" activeClassName="active" exact to="/cart">
-                    <div className="cart-image-continer">
-                        <SvgCart className="svg-cart"></SvgCart>
-                    </div>
+                <div className="nav-bar">
 
-                    <h3> {count}</h3>
+                    <NavLink className="wishlist-link" activeClassName="active" exact to="/wishlist">
+                        <div className="svg-image-continer">
+                            <SvgWishlistSec className="svg"> </SvgWishlistSec>
+                        </div>
+                    </NavLink>
 
-                </NavLink>
+                    <NavLink className="bag-link" activeClassName="active" exact to="/cart">
+                        <div className="bag-image-continer">
+                            <SvgBeg className="svg"> </SvgBeg>
+                        </div>
+
+                        <h3> {count} </h3>
+
+                    </NavLink>
+
+                </div>
             </header>
         );
     }
@@ -33,7 +45,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart.cart
+        cart: state.cart.products
     }
 }
 

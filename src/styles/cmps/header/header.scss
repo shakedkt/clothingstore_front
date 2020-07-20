@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 120px 30px 120px;
+    padding: 20px 120px 20px 120px;
     position: sticky;
     background-color: white;
     top: 0px;
@@ -12,28 +12,46 @@
         font-size: 33px;
         color: $clr3;
         font-family: 'Bebas Neue', cursive;
+        min-width: 200px;
     }
 
-
-    .cart-link {
+    .nav-bar {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: center;
+        align-items: baseline;
+        width: 160px;
+    }
+
+
+    .bag-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
 
         h3 {
-            font-size: 22px;
+            font-size: 25px;
             margin-left: 4px;
-            margin-top: 3px;
-        }
-
-        .svg-cart{
-            height: 30px;
-            width: 30px;
+            // margin-top: 10px;
         }
     }
 
-    .cart-image-continer {
-        height: 20px;
+    .bag-image-continer {
+        height: 30px;
+        stroke-width: 200;
+
+        .svg {
+            height: 30px;
+            width: 30px;
+            stroke-width: 200;
+        }
+    }
+
+    .wishlist-link {
+        .svg{
+            height: 28px;
+            width: 30px;
+        }
     }
 }

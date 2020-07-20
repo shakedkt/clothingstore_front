@@ -1,7 +1,7 @@
 import { ProductService } from '../services/product.service'
 
 export function loadProducts(filterBy) {
-    return async dispatch => {
+    return async dispatch => {        
         const products = await ProductService.getProducts(filterBy)
         dispatch({ type: 'SET_PRODUCTS', products })
     }

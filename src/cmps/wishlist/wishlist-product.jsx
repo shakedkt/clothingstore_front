@@ -3,7 +3,8 @@ import Flag from '../../images/uk-flag.png'
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../actions/cartActions';
 import crossImage from '../../images/cross.png';
-class BagProduct extends Component {
+
+class WishlistProduct extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -46,7 +47,7 @@ class BagProduct extends Component {
         if (!product) {
             return <div> wait</div>;
         }
-
+        
         return (
             <section className="bag">
                 <div className="bag-header">
@@ -91,7 +92,7 @@ class BagProduct extends Component {
                                 </form>
                                 :
                                 <div>
-                                    <h3>size: {product.size ? product.size : {size}}</h3>
+                                    <h3 >size: {size}</h3>
                                     <button onClick={this.deleteSize}>Change </button>
                                 </div>}
                         </div>
@@ -126,7 +127,7 @@ class BagProduct extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart.products
+        wishlist: state.wishlist.product
     }
 }
 
@@ -134,5 +135,5 @@ const mapDispatchToProps = {
     removeFromCart
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BagProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(WishlistProduct)
 

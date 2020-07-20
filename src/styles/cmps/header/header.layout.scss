@@ -1,0 +1,43 @@
+.main-layout {
+
+    @include for-extra-wide-layout {}
+
+    @include for-wide-layout {
+        // .home {
+        // }
+    }
+
+    @include for-medium-layout {
+        .navbar {
+            padding: 20px 10px 20px 10px;
+
+            .nav-bar {
+                width: initial;
+            }
+
+            .bag-link {
+                padding-left: 20px;
+            }
+
+            .bag-image-continer {
+                height: 35px;
+
+                .svg {
+                    height: 35px;
+                    width: 35px;
+                    stroke-width: 200;
+                }
+            }
+
+            .wishlist-link {
+                .svg {
+                    height: 31px;
+                    width: 34px;
+                }
+            }
+        }
+    }
+
+    @include for-narrow-layout {}
+
+}

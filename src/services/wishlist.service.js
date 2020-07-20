@@ -5,13 +5,21 @@ const KEY = 'wishlist';
 
 function addToWishlist(product) {
     let wishlist = StorageService.load(KEY)
+
+    if (!product.size) {
+        product.product.size = 36
+    } else {
+        product.product.size = JSON.parse(product.size)
+    }
+
     if (!wishlist) {
         StorageService.save(KEY, [product])
-        return product
+        return (JSON.parse(JSON.stringify(product)))
     }
+
     wishlist.unshift(product)
     StorageService.save(KEY, wishlist)
-    return wishlist
+    return JSON.parse(JSON.stringify(product))
 }
 
 function removeFromWishlist(productId) {
@@ -24,7 +32,6 @@ function removeFromWishlist(productId) {
 }
 
 function changeProductSize(product) {
-console.log(product);
 
 
     // let cart = StorageService.load(KEY)
@@ -37,6 +44,10 @@ console.log(product);
 
 function loadWishlist() {
     let wishlist = StorageService.load(KEY)
+    if (!wishlist) {
+        StorageService.save(KEY, [])
+        wishlist = []
+    }
     return wishlist
 }
 

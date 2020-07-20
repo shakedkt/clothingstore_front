@@ -2,22 +2,28 @@ import { StorageService } from './storage.service';
 
 const KEY = 'cart';
 
-
 function addToCart(product) {
     let cart = StorageService.load(KEY)
+    console.log('product in addToCart', product);
+
+    if (!product.size) {
+        product.product.size = 36
+    } else {
+        product.product.size = JSON.parse(product.size)
+    }
+
     if (!cart) {
         StorageService.save(KEY, [product])
-        return product
+        return (JSON.parse(JSON.stringify(product)))
     }
-    console.log(cart);
     cart.unshift(product)
     StorageService.save(KEY, cart)
-    return cart
+    return JSON.parse(JSON.stringify(product))
 }
 
 function removeFromCart(productId) {
     let cart = StorageService.load(KEY)
-   let newCart = cart.filter(cartItem => {
+    let newCart = cart.filter(cartItem => {
         return productId !== cartItem.id
     })
     newCart = JSON.parse(JSON.stringify(newCart));
@@ -25,7 +31,6 @@ function removeFromCart(productId) {
 }
 
 function changeProductSize(product) {
-console.log(product);
 
 
     // let cart = StorageService.load(KEY)
@@ -38,6 +43,11 @@ console.log(product);
 
 function loadCart() {
     let cart = StorageService.load(KEY)
+    if (!cart) {
+        StorageService.save(KEY, [])
+        cart = []
+    }
+
     return cart
 }
 

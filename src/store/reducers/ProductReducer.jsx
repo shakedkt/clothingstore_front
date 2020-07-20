@@ -1,6 +1,7 @@
 const initalState = {
     products: [],
-    currProduct: null
+    currProduct: null,
+    tagName: 'ProductPreview' 
 }
 
 export default function ProductReducer(state = initalState, action) {
