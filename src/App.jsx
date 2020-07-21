@@ -12,13 +12,12 @@ const history = createBrowserHistory();
 
 
 class App extends Component {
+
   render() {
     return (
       <div className="main-layout">
         <Router history={history}>
-
           <Header></Header>
-
           <main>
             <Switch>
               <Route path="/" exact component={Home} />

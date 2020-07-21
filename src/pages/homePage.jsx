@@ -1,14 +1,37 @@
 import React, { Component } from 'react';
 import ProductsSection from '../cmps/products/productsSection';
-
+import NavBar from '../cmps/navBar';
 export default class homePage extends Component {
 
-    state = {
-        section: '',
-        title: 'all',
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            section: '',
+            title: 'all',
+            width: 0,
+            height: 0
+
+        };
+
+        this.changeSection = this.changeSection.bind(this);
+    }
+
+    updateDimensions = () => {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
     };
 
+    componentDidMount() {
+        window.addEventListener('resize', this.updateDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateDimensions);
+    }
+
     changeSection(section) {
+        console.log('section', section);
+
         this.setState({
             section: section,
         });
@@ -34,15 +57,24 @@ export default class homePage extends Component {
 
     render() {
 
+        let width = window.innerWidth;
+        if (width < 768) {
+
+            return (
+
+                <section className="home">
+                    <div className="category-header">
+                        <h2 className="category-title"> {this.state.title} </h2>
+                        <h3 className="category-subtitle"> Shop the most amazing designer clothes and give your wardrobe a fresh new look for the season ahead.</h3>
+                    </div>
+
+                    <ProductsSection section={this.state.section}> </ProductsSection>
+                </section>
+            )
+        }
         return (
             <section className="home">
-                <div className="links">
-                    <button className="shirts-link" onClick={() => this.changeSection('')}> all </button>
-                    <button className="shirts-link" onClick={() => this.changeSection('Topwear')}> shirts </button>
-                    <button className="shirts-link" onClick={() => this.changeSection('Bottomwear')}> pants </button>
-                    <button className="shirts-link" onClick={() => this.changeSection('Watches')}> Watches </button>
-                </div>
-
+                <NavBar changeSection={this.changeSection} > </NavBar>
                 <div className="category-header">
                     <h2 className="category-title"> {this.state.title} </h2>
                     <h3 className="category-subtitle"> Shop the most amazing designer clothes and give your wardrobe a fresh new look for the season ahead.</h3>

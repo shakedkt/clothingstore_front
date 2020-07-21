@@ -21,6 +21,12 @@
     @content;
   }
 }
+
+@mixin for-biggest-layout {
+  @media (min-width: $break-extra-wide) {
+    @content;
+  }
+}
   
 
 @mixin aspect-ratio($width, $height) {

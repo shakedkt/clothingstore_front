@@ -7,9 +7,9 @@ function addToCart(product) {
     console.log('product in addToCart', product);
 
     if (!product.size) {
-        product.product.size = 36
+        product.size = 36
     } else {
-        product.product.size = JSON.parse(product.size)
+        product.size = JSON.parse(product.size)
     }
 
     if (!cart) {

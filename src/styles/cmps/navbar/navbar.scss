@@ -1,0 +1,13 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 250px;
+    font-weight: bold;
+    color: $clr3;
+    padding-bottom: 40px;
+}
+
+.burger-btn {
+    display: none;
+}
