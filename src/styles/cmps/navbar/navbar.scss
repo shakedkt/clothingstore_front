@@ -1,11 +1,24 @@
 .links {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     min-width: 250px;
     font-weight: bold;
     color: $clr3;
     padding-bottom: 40px;
+    text-align: left;
+    align-items: start;
+    justify-content: space-around;
+
+    >* {
+        margin: 0px 20px 0px 20px;
+        font-size: 26px;
+        font-family: 'Bebas Neue', cursive;
+    }
+
+    > :first-child {
+        margin-left: 0px;
+    }
+
 }
 
 .burger-btn {

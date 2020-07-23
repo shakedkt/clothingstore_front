@@ -84,7 +84,8 @@ code {
 }
 
 body {
-  font-family: 'vegur-regular'
+  font-family: 'vegur-regular';
+  margin: 0px;
 }
 
 
@@ -96,8 +97,10 @@ body {
 // LAYOUTS 
 @import './styles/cmps/header/header.layout.scss';
 @import './styles/pages/home/home.layout.scss';
-@import './styles/cmps/product-preview/productPrev.layout.scss';
+@import './styles/cmps/product-preview/productPreview.layout.scss';
 @import './styles/cmps/navbar/navbar.layout.scss';
+@import './styles/cmps/cart/cartLayout.scss';
+@import './styles/cmps/product-page/productPage.layout.scss';
 
 // COMPONENTS
 @import './styles/cmps/header/header.scss';

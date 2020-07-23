@@ -1,17 +1,17 @@
 .main-layout {
 
     @include for-biggest-layout {
-        .links {
-            >* {
-                margin: 0px 20px 0px 20px;
-                font-size: 26px;
-                font-family: 'Bebas Neue', cursive;
-            }
+        // .links {
+        //     >* {
+        //         margin: 0px 20px 0px 20px;
+        //         font-size: 26px;
+        //         font-family: 'Bebas Neue', cursive;
+        //     }
 
-            > :first-child {
-                margin-left: 0px;
-            }
-        }
+        //     > :first-child {
+        //         margin-left: 0px;
+        //     }
+        // }
     }
 
     @include for-extra-wide-layout {}
@@ -20,34 +20,35 @@
 
     @include for-medium-layout {
 
-        .burger-image-continer {
-            .svg {
-                display: initial;
-                height: 30px;
-                width: 30px;
-            }
-        }
+        // .burger-image-continer {
+        //     .svg {
+        //         display: initial;
+        //         height: 30px;
+        //         width: 30px;
+        //     }
+        // }
 
         .links {
-            display: none;
-            flex-direction: column;
-            align-items: start;
-            flex-flow: column nowrap;
+            //     display: none;
+            //     flex-direction: column;
+            //     align-items: start;
+            //     flex-flow: column nowrap;
+            //     justify-content: initial;
+            //     font-weight: bold;
+            // color: $clr3;
+            // min-width: initial;
+            // padding-bottom: 0px;
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            // height: 100vh;
+            // width: 200px;
+            // background-color: #f8f8f8;
+            // padding: 20px 0px 20px 30px;
             justify-content: initial;
-            font-weight: bold;
-            color: $clr3;
-            min-width: initial;
-            padding-bottom: 0px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 200px;
-            background-color: #f8f8f8;
-            padding: 20px 0px 20px 30px;
 
             >* {
-                margin: 0px 0px 25px 0px;
+                margin: 0px 0px 0px 0px;
                 font-size: 35px;
                 font-family: 'Bebas Neue', cursive;
 
@@ -62,12 +63,5 @@
     }
 
     @include for-narrow-layout {
-        .ProductPreview {
-            width: 100vw;
 
-            // .image-wrapper{
-
-            // }
-        }
-    }
-}
+}}

@@ -35,15 +35,13 @@ class WishlistPage extends Component {
         } 
 
         return (
-            <section className="wishlist-page">
+            <section className="cart-page">
                 <div className="header">
                     <h2>Wishlist bag</h2>
                 </div>
 
                 <div className="products">
-                    {/* <wishlistList wishlist={this.props.wishlist}></wishlistList> */}
                     <List products={this.props.wishlist} tagName={'WishlistProduct'}> </List>
-
                 </div>
 
             </section>

@@ -100,11 +100,14 @@ class ProductPage extends Component {
 
         return (
             <section className="product-page">
+
+                <div className="image-container">
                 <img src={product.image.link} alt="" />
+                </div>
 
                 <div className="product-details">
                     <div>
-                        <h2>{product.productDisplayName} </h2>
+                        <h2 className="product-header">{product.productDisplayName} </h2>
                         <h3 className="product-price">&#36;{product.price} <span>(Import fees not included)</span></h3>
                     </div>
 

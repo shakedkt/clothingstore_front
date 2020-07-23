@@ -1,7 +1,7 @@
 import { ProductService } from '../services/product.service'
 
 export function loadProducts(filterBy) {
-    return async dispatch => {        
+    return async dispatch => {
         const products = await ProductService.getProducts(filterBy)
         dispatch({ type: 'SET_PRODUCTS', products })
     }
@@ -16,6 +16,20 @@ export function loadProductById(id) {
 
 export function resetProduct() {
     return async dispatch => {
-        dispatch({ type: 'RESEST_PRODUCT'})
+        dispatch({ type: 'RESEST_PRODUCT' })
+    }
+}
+
+export function changeSection(section) {
+    return async dispatch => {
+        dispatch({ type: 'SET_SECTION', section })
+    }
+}
+
+export function changeTitle(title) {
+    console.log('title:', title);
+    
+    return async dispatch => {
+        dispatch({ type: 'SET_TITLE', title })
     }
 }

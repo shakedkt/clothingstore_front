@@ -1,0 +1,117 @@
+.main-layout {
+
+    @include for-biggest-layout {}
+
+    @include for-extra-wide-layout {}
+
+    @include for-wide-layout {
+        .cart-page {
+            padding: 10px 50px 30px 50px;
+
+
+            .bag {
+                border: none
+            }
+
+            .bag-header {
+                padding: 15px 0px;
+                margin: 10px;
+            }
+
+            .bag-body {
+                justify-content: space-between;
+
+                *:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+            }
+        }
+    }
+
+    @include for-medium-layout {
+        .cart-page {
+            padding: 10px 10px 25px 10px;
+
+            h3 {
+                padding-bottom: initial;
+            }
+
+            .size {
+                margin: 15px 0px;
+            }
+
+            .bag {
+                border-top: 1px solid #a2a2a2c7;
+                margin-top: 30px;
+            }
+
+            .bag-header {
+                padding: 15px 0px;
+            }
+
+            .bag-body {
+                border: initial;
+                padding: 15px 0px;
+
+                *:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+            }
+        }
+
+        .product-cart-desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: unset;
+            align-items: unset;
+        }
+
+        .product-price {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    }
+
+
+
+    @include for-narrow-layout {
+        .cart-page {
+            .bag-body {
+                border: initial;
+                padding: 15px 0px;
+                font-size: 16px;
+
+                *:not(:last-child) {
+                    margin-right: 0px;
+                }
+
+                .prod-img {
+                    width: 120px;
+                }
+            }
+
+            .bag-header {
+                padding: 0px 0px;
+                font-size: 14px;
+                margin: 13px 1px;
+
+                .shipping-from {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: center;
+                }
+
+                img {
+                    width: 15px;
+                    height: 16px;
+                    margin-right: 5px;
+                }
+            }
+
+        }
+
+    }
+}
