@@ -54,10 +54,12 @@ class ProductPage extends Component {
                 size: this.state.selectedOption.value,
                 product: this.props.product
             }
-            if (listName === 'cart') this.props.updateCart(alterdProduct)
+            if (listName === 'cart') {
+                this.props.updateCart(alterdProduct)
+                return
+            }
             else this.props.updateWishlist(alterdProduct)
         }
-
     }
 
     handleChange = selectedOption => {
@@ -102,7 +104,7 @@ class ProductPage extends Component {
             <section className="product-page">
 
                 <div className="image-container">
-                <img src={product.image.link} alt="" />
+                    <img src={product.image.link} alt="" />
                 </div>
 
                 <div className="product-details">
@@ -127,7 +129,7 @@ class ProductPage extends Component {
                     <div className="reactive-section">
                         <p className="Requierd"> {isSelected === null || isSelected === true ? '' : 'size is requierd'} </p>
                         <Select
-                        className="select-cmp"
+                            className="select-cmp"
                             placeholder={'Select Size...'}
                             value={selectedOption}
                             onChange={this.handleChange}
