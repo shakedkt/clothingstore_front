@@ -6,7 +6,9 @@ function addToCart(product) {
     let cart = StorageService.load(KEY)
     console.log('product in addToCart', product);
     let newProduct = product.product
-
+    console.log('meep');
+    console.log('newProduct:', newProduct);
+    
     if (!product.size) {
         newProduct.size = 36
     } else {
