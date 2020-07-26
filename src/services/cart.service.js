@@ -13,6 +13,8 @@ function addToCart(product) {
         newProduct.size = JSON.parse(product.size)
     }
 
+    console.log('newProduct', newProduct);
+
     if (!cart) {
         StorageService.save(KEY, [newProduct])
         return (JSON.parse(JSON.stringify(newProduct)))
