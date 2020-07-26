@@ -38,9 +38,6 @@ class Header extends Component {
   };
 
   sectionName(section) {
-      console.log('got here');
-      console.log(section);
-      
     if (section === "") {
       this.props.changeTitle("all products");
     } else {
