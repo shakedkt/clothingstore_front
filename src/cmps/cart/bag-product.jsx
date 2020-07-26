@@ -42,6 +42,8 @@ class BagProduct extends Component {
     const quantity = this.state.quantity;
     let flag = this.state.flag;
 
+console.log('product', product);
+
     if (!product) {
       return <div> wait</div>;
     }
