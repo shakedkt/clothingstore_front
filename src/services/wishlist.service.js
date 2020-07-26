@@ -7,19 +7,19 @@ function addToWishlist(product) {
     let wishlist = StorageService.load(KEY)
 
     if (!product.size) {
-        product.product.size = 36
+        product.size = 36
     } else {
         product.product.size = JSON.parse(product.size)
     }
 
     if (!wishlist) {
-        StorageService.save(KEY, [product])
-        return (JSON.parse(JSON.stringify(product)))
+        StorageService.save(KEY, [product.product || product])
+        return (JSON.parse(JSON.stringify(product.product || product)))
     }
 
-    wishlist.unshift(product)
+    wishlist.unshift(product.product || product)
     StorageService.save(KEY, wishlist)
-    return JSON.parse(JSON.stringify(product))
+    return JSON.parse(JSON.stringify(product.product || product))
 }
 
 function removeFromWishlist(productId) {

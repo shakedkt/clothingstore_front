@@ -4,15 +4,15 @@
 
     @include for-wide-layout {}
 
-    @include for-medium-layout {}
-
-    @include for-narrow-layout {
+    @include for-medium-layout {
         .ProductPreview {
             width: 100vw;
 
             .prev-details-section {
                 padding: 10px;
             }
-            }
         }
     }
+
+    @include for-narrow-layout {}
+}

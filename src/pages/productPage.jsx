@@ -7,6 +7,7 @@ import Select from 'react-select';
 import SvgCart from '../images/shoping-cart';
 import SvgStar from '../images/star';
 import { updateWishlist } from '../actions/wishlistActions';
+import Icon from "../images/spiner";
 
 const options = [
     { value: '36', label: 'Size 36' },
@@ -97,7 +98,7 @@ class ProductPage extends Component {
         var [firstDate, secondDate] = this.getRandomNum()
 
         if (!product) {
-            return <div> wait</div>;
+            return <div> <Icon className="spinner"></Icon> </div>;
         }
 
         return (

@@ -13,10 +13,6 @@ export default (props) => {
 
     let TagName = components[props.tagName];
 
-    console.log('wow');
-
-    console.log('props', props);
-
     return (
         <div className='products-list'>
             {props.products.map((product) => (

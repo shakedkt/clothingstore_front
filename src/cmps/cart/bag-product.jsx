@@ -3,6 +3,7 @@ import Flag from "../../images/uk-flag.png";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cartActions";
 import crossImage from "../../images/cross.png";
+import Icon from "../../images/spiner";
 class BagProduct extends Component {
   constructor(props, context) {
     super(props, context);
@@ -43,10 +44,9 @@ class BagProduct extends Component {
     const quantity = this.state.quantity;
     let flag = this.state.flag;
 
-console.log('product', product);
-
+    
     if (!product) {
-      return <div> wait</div>;
+      return <div> <Icon className="spinner"></Icon> </div>;
     }
 
     return (
@@ -96,11 +96,11 @@ console.log('product', product);
                     </label>
                   </form>
                 ) : (
-                  <div>
-                    <h3>size: {product.size ? product.size : { size }}</h3>
-                    <button onClick={this.deleteSize}>Change </button>
-                  </div>
-                )}
+                    <div>
+                      <h3>size: {product.size ? product.size : { size }}</h3>
+                      <button onClick={this.deleteSize}>Change </button>
+                    </div>
+                  )}
               </div>
 
               <div>
@@ -121,11 +121,11 @@ console.log('product', product);
                     </label>
                   </form>
                 ) : (
-                  <div className="quantity">
-                    <h3>Quantity: {quantity}</h3>
-                    <button onClick={this.changeFlag}>Change </button>
-                  </div>
-                )}
+                    <div className="quantity">
+                      <h3>Quantity: {quantity}</h3>
+                      <button onClick={this.changeFlag}>Change </button>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

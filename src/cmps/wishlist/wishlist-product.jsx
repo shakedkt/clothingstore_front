@@ -3,6 +3,7 @@ import Flag from "../../images/uk-flag.png";
 import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cartActions";
 import crossImage from "../../images/cross.png";
+import Icon from "../../images/spiner";
 
 class WishlistProduct extends Component {
   constructor(props, context) {
@@ -44,7 +45,7 @@ class WishlistProduct extends Component {
     let flag = this.state.flag;
 
     if (!product) {
-      return <div> wait</div>;
+      return <div> <Icon className="spinner"></Icon> </div>;
     }
 
     console.log("product:", product);
@@ -96,11 +97,11 @@ class WishlistProduct extends Component {
                     </label>
                   </form>
                 ) : (
-                  <div>
-                    <h3>size: {size}</h3>
-                    <button onClick={this.deleteSize}>Change </button>
-                  </div>
-                )}
+                    <div>
+                      <h3>size: {size}</h3>
+                      <button onClick={this.deleteSize}>Change </button>
+                    </div>
+                  )}
               </div>
 
               <div>
@@ -121,11 +122,11 @@ class WishlistProduct extends Component {
                     </label>
                   </form>
                 ) : (
-                  <div className="quantity">
-                    <h3>Quantity: {quantity}</h3>
-                    <button onClick={this.changeFlag}>Change </button>
-                  </div>
-                )}
+                    <div className="quantity">
+                      <h3>Quantity: {quantity}</h3>
+                      <button onClick={this.changeFlag}>Change </button>
+                    </div>
+                  )}
               </div>
             </div>
           </div>

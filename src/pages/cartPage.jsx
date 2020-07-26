@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SHOP from '../images/emptybag.jpg';
 import { loadCart } from '../actions/cartActions';
 import List from '../cmps/list';
-
+import Icon from '../images/spiner'
 
 class CartPage extends Component {
 
@@ -23,6 +23,7 @@ class CartPage extends Component {
     }
 
     render() {
+        console.log('this.props.cart', this.props.cart);
         if (this.props.cart.length === 0) {
             return (
                 <section className="empty-bag">
@@ -33,6 +34,10 @@ class CartPage extends Component {
                 </section>
             )
         }
+
+        if (!this.props.cart) {
+            return <div> <Icon className="spinner"></Icon> </div>;
+          }
 
         return (
             <section className="cart-page">
