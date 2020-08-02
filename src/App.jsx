@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import cartPage from './pages/cartPage';
 import wishlistPage from './pages/wishlistPage';
-
+import Footer from './cmps/footer';
+import ChatApp from './cmps/chatApp/chatApp';
 const history = createBrowserHistory();
-
 
 class App extends Component {
 
@@ -25,7 +25,9 @@ class App extends Component {
               <Route path="/cart" exact component={cartPage} />
               <Route path="/wishlist" exact component={wishlistPage} />
             </Switch>
+            <ChatApp></ChatApp>
           </main>
+          <Footer> </Footer>
         </Router>
       </div>
     );

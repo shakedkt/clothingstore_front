@@ -1,0 +1,24 @@
+.chat-app {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+
+.svg-chat-continer {
+    height: 50px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+
+    .svg {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.message-list{
+    overflow: scroll;
+    margin: 10px;
+}

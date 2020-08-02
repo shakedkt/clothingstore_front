@@ -1,0 +1,18 @@
+.footer-cmp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px 20px 120px;
+    background-color: #333;
+    z-index: 1;
+
+    position: static;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    div {
+        font-size: 20px;
+    }
+}

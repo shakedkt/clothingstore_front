@@ -6,6 +6,8 @@ import SvgWishlistSec from "../images/wishlistThird";
 import Burger from "../cmps/burger";
 import { changeSection } from "../actions/productActions";
 import { changeTitle } from "../actions/productActions";
+import NavBar from "../cmps/navBar";
+
 
 class Header extends Component {
   constructor(props) {
@@ -32,8 +34,8 @@ class Header extends Component {
     window.removeEventListener("resize", this.updateDimensions);
   }
 
-  async changeSection (section) {
-   await this.props.changeSection(section);
+  async changeSection(section) {
+    await this.props.changeSection(section);
     this.sectionName(section);
   };
 
@@ -42,7 +44,7 @@ class Header extends Component {
       this.props.changeTitle("all products");
     } else {
       this.props.changeTitle(section);
-    }    
+    }
   }
 
   render() {
@@ -94,39 +96,43 @@ class Header extends Component {
     }
 
     return (
-      <header className="navbar">
-        <div className="logo">
-          <NavLink activeClassName="active" exact to="/">
-            {" "}
+      <header >
+        <div className="navbar">
+          <div className="logo">
+            <NavLink activeClassName="active" exact to="/">
+              {" "}
             clothes &amp; brands
           </NavLink>
+          </div>
+
+          <div className="nav-bar">
+            <NavLink
+              className="wishlist-link"
+              activeClassName="active"
+              exact
+              to="/wishlist"
+            >
+              <div className="svg-image-continer">
+                <SvgWishlistSec className="svg"> </SvgWishlistSec>
+              </div>
+            </NavLink>
+
+            <NavLink
+              className="bag-link"
+              activeClassName="active"
+              exact
+              to="/cart"
+            >
+              <div className="bag-image-continer">
+                <SvgBeg className="svg"> </SvgBeg>
+              </div>
+
+              <h3> {count} </h3>
+            </NavLink>
+          </div>
         </div>
+        <NavBar changeSection={this.changeSection}> </NavBar>
 
-        <div className="nav-bar">
-          <NavLink
-            className="wishlist-link"
-            activeClassName="active"
-            exact
-            to="/wishlist"
-          >
-            <div className="svg-image-continer">
-              <SvgWishlistSec className="svg"> </SvgWishlistSec>
-            </div>
-          </NavLink>
-
-          <NavLink
-            className="bag-link"
-            activeClassName="active"
-            exact
-            to="/cart"
-          >
-            <div className="bag-image-continer">
-              <SvgBeg className="svg"> </SvgBeg>
-            </div>
-
-            <h3> {count} </h3>
-          </NavLink>
-        </div>
       </header>
     );
   }

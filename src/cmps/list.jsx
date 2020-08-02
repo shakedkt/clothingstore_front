@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useEffect } from 'react';
 import ProductPreview from './products/ProductPreview';
 import WishlistProduct from './wishlist/wishlist-product';
 import BagProduct from './cart/bag-product';

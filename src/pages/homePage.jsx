@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ProductsSection from "../cmps/products/productsSection";
-import NavBar from "../cmps/navBar";
+// import NavBar from "../cmps/navBar";
 import { changeSection } from "../actions/productActions";
 import { changeTitle } from "../actions/productActions";
 import { connect } from "react-redux";
@@ -66,7 +66,7 @@ class homePage extends Component {
 
     return (
       <section className="home">
-        <NavBar changeSection={this.changeSection}> </NavBar>
+        {/* <NavBar changeSection={this.changeSection}> </NavBar> */}
         <div className="category-header">
           <h2 className="category-title"> {this.props.section.title} </h2>
           <h3 className="category-subtitle">

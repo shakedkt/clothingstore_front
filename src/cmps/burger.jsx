@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import SvgBorger from "../images/borger.png";
 import NavBar from "../cmps/navBar";
 
 const StyledBurger = styled.div`

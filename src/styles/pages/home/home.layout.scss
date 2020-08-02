@@ -10,6 +10,11 @@
     @include for-medium-layout {
         .home {
             padding: 0px;
+
+            .category-header{
+                padding: 29px;
+                
+            }
         }
     }
 

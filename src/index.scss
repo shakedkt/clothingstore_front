@@ -83,10 +83,25 @@ code {
   font-family: 'vegur-regular', 'vegur-bold', sans-serif;
 }
 
+
+
 body {
+  // font-family: 'vegur-regular';
+  margin: 0px;
+}
+
+
+html {
+  background-color: #f5f5f5;
+  // height: 100vh;
   font-family: 'vegur-regular';
   margin: 0px;
 }
+
+main{
+  min-height: 100vh;
+}
+
 
 
 // SETUP
@@ -110,4 +125,6 @@ body {
 @import './styles/cmps/product-page/productPage.scss';
 @import './styles/pages/home/wishList/wishlist.scss';
 @import './styles/cmps/navbar/navbar.scss';
-
+@import './styles/cmps/footer/footer.scss';
+@import './styles/cmps/chat/chat.scss';
+@import './styles/cmps/chat/message.scss';

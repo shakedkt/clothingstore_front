@@ -1,16 +1,17 @@
 .links {
-    display: flex;
+    // display: flex;
     flex-direction: row;
     min-width: 250px;
     font-weight: bold;
     color: $clr3;
-    padding-bottom: 40px;
-    text-align: left;
+    // text-align: left;
     align-items: start;
-    justify-content: space-around;
+    // justify-content: space-evenly;
+    background-color: white;
+    padding: 0 120px 15px 120px;
 
     >* {
-        margin: 0px 20px 0px 20px;
+        margin: 0px 60px 0px 0px;
         font-size: 26px;
         font-family: 'Bebas Neue', cursive;
     }
