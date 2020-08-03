@@ -55,8 +55,8 @@ class BagProduct extends Component {
           <div className="shipping-from">
             <img src={Flag} alt="" />
             <div>
-              Shipping from{" "}
-              <span className="country-name"> United Kingdom </span>{" "}
+              Shipping from
+              <span className="country-name"> United Kingdom </span>
             </div>
           </div>
           <div>

@@ -13,7 +13,7 @@
     right: 0;
 
     div {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .logo {
@@ -30,5 +30,9 @@
         border-radius: 5px;
         cursor: pointer;
         margin-bottom: 20px;
+    }
+
+    .footer-desc{
+        color: white;
     }
 }

@@ -39,8 +39,9 @@ class WishlistProduct extends Component {
   };
 
   render() {
+    console.log(this.props);
     const size = this.state.size;
-    const product = this.props.product.product;
+    const product = this.props.product;
     const quantity = this.state.quantity;
     let flag = this.state.flag;
 

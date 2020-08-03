@@ -97,8 +97,10 @@
 .empty-bag {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-color: white;
+    padding-top: 20px;
 
     .shop-img {
         width: 400px;
