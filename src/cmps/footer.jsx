@@ -4,7 +4,11 @@ import React from 'react';
 export default (props) => {
     return (
         <footer className="footer-cmp">
-            <div>this is footer</div>
+            <div class="logo">
+                SK
+      <span>.</span>
+            </div>
+            <div>Site design inspired by various clothing sites</div>
         </footer>
     )
 }
