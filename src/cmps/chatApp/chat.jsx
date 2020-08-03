@@ -126,7 +126,7 @@ export default (props) => {
             sender: 'bot'
         }
     ])
-    const ENDPOINT = 'http://localhost:3000'
+    const ENDPOINT = 'https://clothing-store-emkt.herokuapp.com'
 
     useEffect(() => {
         if (!firstJoin) {
