@@ -1,14 +1,11 @@
 .message-continer {
     display: flex;
-    // flex-direction: row;
     justify-content: flex-end;
-
     font-size: 17px;
     border-radius: 10px;
     padding: 8px 5px;
-    word-wrap: break-word;
-
     margin-bottom: 20px;
+    max-width: fit-content;
 
     :first-child {
         padding-right: 5px;
@@ -24,6 +21,15 @@
 
     .message-content {
         display: inline-block;
+        
+
+        div {
+            width: 100%;
+            letter-spacing: 0;
+            float: left;
+            font-size: 1.1em;
+            word-wrap: break-word;
+        }
     }
 
 }

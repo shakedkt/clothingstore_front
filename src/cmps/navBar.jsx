@@ -6,7 +6,7 @@ const Nav = styled.div`
   flex-flow: row nowrap;
 
   .links-section {
-    padding: 18px 10px;
+    padding: 18px 10px 18px 0px;
   }
 
   @media (max-width: 768px) {

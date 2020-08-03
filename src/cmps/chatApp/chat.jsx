@@ -42,11 +42,12 @@ const Chat = styled.div`
     }
 
     .chatapp-body{
-        min-height: 400px;
+        height: 400px;
         background-color: white;
+        overflow: auto;
         opacity: 0.7;
         min-width: 300px;
-    }
+        }
 
     .send-msg-section{
         border-top: 1px solid black;
@@ -57,7 +58,7 @@ const Chat = styled.div`
         background-color: white;
         
         input {
-                min-width: 240px;
+                min-width: 250px;
                 border: none;
                 outline: none;
                 font-size: 20px;
@@ -96,6 +97,20 @@ const Chat = styled.div`
     font-family: 'vegur-bold';
     font-size: 22px;
 }
+
+@media screen and (max-width: 380px) {
+    .send-msg-section{
+        
+        input {
+                min-width: 225px;
+                
+            }
+    }
+
+    .chatapp-body{
+        min-width: 280px;
+        }
+  }
 `;
 
 var socket;
@@ -104,7 +119,7 @@ export default (props) => {
     const [firstJoin, setFirstJoin] = useState(true)
     const [name, setName] = useState(false)
     const [input, setInput] = useState('')
-    const [message, setMessage] = useState('')
+    // const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([
         {
             content: 'please enter your name',
@@ -117,7 +132,7 @@ export default (props) => {
         if (!firstJoin) {
             socket = io(ENDPOINT);
             socket.emit('join', { room: 'main', name: name }, (error) => {
-                if (error) console.log('fucking error', error);
+                if (error) console.log(error);
             })
         }
         return () => {
@@ -133,7 +148,6 @@ export default (props) => {
 
         if (messages.length >= 2) {
             socket.once('message', message => {
-                console.log('socket.on inside useEffect');
                 setMessages(messages => [...messages, message]);
             })
         }
@@ -144,20 +158,24 @@ export default (props) => {
         setInput(event.target.value)
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
         const msg = {
             content: input,
-            sender: 'user'
+            sender: name || input
         }
+
         if (!name) {
-            console.log('got here');
             setName(msg.content)
             setFirstJoin(false)
             setMessages(oldArray => [...oldArray, msg]);
             setInput('')
+            event.preventDefault()
             return
         }
         socket.emit('sendMessage', msg, () => setInput(''));
+        event.preventDefault()
+
     }
 
     return (
@@ -177,12 +195,14 @@ export default (props) => {
             </div>
 
             <div className="send-msg-section">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input type="text" value={input} onChange={handleChange} />
+
+                    <button className="svg-send-continer" >
+                        <SendButton className="svg" ></SendButton>
+                    </button>
                 </form>
-                <div className="svg-send-continer" onClick={handleSubmit}>
-                    <SendButton className="svg" ></SendButton>
-                </div>
+
             </div>
         </Chat>
     )

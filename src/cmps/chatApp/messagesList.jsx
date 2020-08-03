@@ -1,12 +1,14 @@
 import React from 'react';
 import Message from './message';
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 export default (props) => {
-    console.log('messages list:', props.messages);
+    console.log(props);
     return (
         <div className='message-list'>
             {props.messages.map((message) => (
-                <Message className="list" message={message} key={Math.random()} name={props.name}> </Message>
+
+                <ScrollToBottom className="list"  key={Math.random()}><Message message={message} name={props.name}></Message> </ScrollToBottom>
             ))}
         </div>
     )
