@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loadProducts } from "../../actions/productActions";
 import List from "../list";
-import Icon from "../images/spiner";
+import Icon from "../../images/spiner";
 
 class productsSection extends Component {
   async componentDidMount() {
