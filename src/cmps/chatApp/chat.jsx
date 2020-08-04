@@ -46,7 +46,7 @@ const Chat = styled.div`
         background-color: white;
         overflow: auto;
         opacity: 0.7;
-        min-width: 300px;
+        width: 300px;
         }
 
     .send-msg-section{
@@ -58,7 +58,7 @@ const Chat = styled.div`
         background-color: white;
         
         input {
-                min-width: 250px;
+                width: 250px;
                 border: none;
                 outline: none;
                 font-size: 20px;
@@ -102,13 +102,13 @@ const Chat = styled.div`
     .send-msg-section{
         
         input {
-                min-width: 225px;
+                width: 225px;
                 
             }
     }
 
     .chatapp-body{
-        min-width: 280px;
+        width: 280px;
         }
   }
 `;
