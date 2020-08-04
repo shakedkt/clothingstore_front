@@ -4,7 +4,7 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 
 export default (props) => {
 
-    console.log('props:',props.messages);
+    console.log('messages:',props.messages);
 
     return (
         <div className='message-list'>
