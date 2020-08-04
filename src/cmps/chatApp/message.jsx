@@ -4,7 +4,6 @@ export default (props) => {
     var message = props.message
     var name = props.name
   
-    console.log('props:', props);
 
 
     const myStyle = {
