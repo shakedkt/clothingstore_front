@@ -39,7 +39,6 @@ class WishlistProduct extends Component {
   };
 
   render() {
-    console.log(this.props);
     const size = this.state.size;
     const product = this.props.product;
     const quantity = this.state.quantity;
@@ -48,8 +47,6 @@ class WishlistProduct extends Component {
     if (!product) {
       return <div> <Icon className="spinner"></Icon> </div>;
     }
-
-    console.log("product:", product);
 
     return (
       <section className="bag">

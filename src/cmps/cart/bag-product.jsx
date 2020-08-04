@@ -38,7 +38,6 @@ class BagProduct extends Component {
   };
 
   render() {
-    console.log('meep');
     const size = this.state.size;
     const product = this.props.product;
     const quantity = this.state.quantity;

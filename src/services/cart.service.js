@@ -47,7 +47,6 @@ function loadCart() {
         StorageService.save(KEY, [])
         cart = []
     }
-    console.log('cart', cart);
     return cart
 }
 

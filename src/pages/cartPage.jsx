@@ -23,7 +23,6 @@ class CartPage extends Component {
     }
 
     render() {
-        console.log('this.props.cart', this.props.cart);
         if (this.props.cart.length === 0) {
             return (
                 <section className="empty-bag">
