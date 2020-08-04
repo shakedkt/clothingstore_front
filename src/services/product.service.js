@@ -11,6 +11,9 @@ async function getProducts(filter) {
         },
         proxy: {
             host: process.env.REACT_APP_BACKEND_URL
+        },
+        header: {
+            crossorigin:true
         }
     })
     return res.data.products
@@ -20,6 +23,9 @@ async function getProductById(id) {
     const res = await axios.get(BASE_URL + id, {
         proxy: {
             host: process.env.REACT_APP_BACKEND_URL
+        },
+        header: {
+            crossorigin:true
         }
     })
     return res.data.product
