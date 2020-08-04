@@ -4,6 +4,9 @@ export default (props) => {
     var message = props.message
     var name = props.name
   
+    console.log('props:', props);
+
+
     const myStyle = {
         backgroundColor: message.sender === name ? 'blue' : 'gray',
         color: message.sender === name ? 'white' : 'black'
