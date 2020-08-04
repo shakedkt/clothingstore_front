@@ -10,10 +10,8 @@ async function getProducts(filter) {
             filter: filter
         },
         proxy: {
-            port: 3000,
             host: process.env.REACT_APP_BACKEND_URL
         }
-
     })
     return res.data.products
 }
@@ -21,7 +19,6 @@ async function getProducts(filter) {
 async function getProductById(id) {
     const res = await axios.get(BASE_URL + id, {
         proxy: {
-            port: 3000,
             host: process.env.REACT_APP_BACKEND_URL
         }
     })

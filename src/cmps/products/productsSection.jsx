@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import ProductList from './ProductList';
 import { loadProducts } from "../../actions/productActions";
 import List from "../list";
+import Icon from "../images/spiner";
 
 class productsSection extends Component {
   async componentDidMount() {
@@ -23,11 +23,15 @@ class productsSection extends Component {
   }
 
   render() {
+
+    if (!this.props.products) {
+      return <div> <Icon className="spinner"></Icon> </div>;
+    }
+
     return (
       <div>
         <div className="products">
           <List products={this.props.products} tagName={"ProductPreview"}>
-            {" "}
           </List>
         </div>
       </div>
@@ -38,7 +42,6 @@ class productsSection extends Component {
 const mapStataeToProps = (state) => {
   return {
     products: state.product.products,
-    // sectionName: state.product.section,
   };
 };
 

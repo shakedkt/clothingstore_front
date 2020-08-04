@@ -3,7 +3,6 @@ import ProductsSection from "../cmps/products/productsSection";
 import { changeSection } from "../actions/productActions";
 import { changeTitle } from "../actions/productActions";
 import { connect } from "react-redux";
-import Icon from "../images/spiner";
 
 class homePage extends Component {
   constructor(props) {
@@ -46,10 +45,6 @@ class homePage extends Component {
 
   render() {
     let width = window.innerWidth;
-
-    if (!this.props.section.section) {
-      return <div> <Icon className="spinner"></Icon> </div>;
-    }
 
     if (width < 768) {
       return (
