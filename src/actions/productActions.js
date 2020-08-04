@@ -27,8 +27,6 @@ export function changeSection(section) {
 }
 
 export function changeTitle(title) {
-    console.log('title:', title);
-    
     return async dispatch => {
         dispatch({ type: 'SET_TITLE', title })
     }
