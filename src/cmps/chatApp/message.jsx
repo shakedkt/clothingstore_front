@@ -7,8 +7,8 @@ export default (props) => {
 
 
     const myStyle = {
-        backgroundColor: message.sender === name ? 'blue' : 'gray',
-        color: message.sender === name ? 'white' : 'black'
+        backgroundColor: message.sender.toLowerCase() === name.toLowerCase() ? 'blue' : 'gray',
+        color: message.sender.toLowerCase() === name.toLowerCase() ? 'white' : 'black'
     };
 
 
