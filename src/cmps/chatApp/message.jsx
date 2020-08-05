@@ -4,14 +4,10 @@ export default (props) => {
     var message = props.message
     var name = props.name
   
-console.log('message.sender', message.sender);
-console.log('name', name);
-
     const myStyle = {
         backgroundColor: message.sender === name ? 'blue' : 'gray',
         color: message.sender === name ? 'white' : 'black'
     };
-
 
     return (
         <div className='message-continer' style={myStyle}>
